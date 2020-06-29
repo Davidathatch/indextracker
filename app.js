@@ -133,6 +133,7 @@ anychart.onDocumentReady(function () {
   } else {
     winnerbanner.innerHTML =
       winner.length + " People Have Indexed The Most Names";
+    winner.style.fontSize = ".75rem";
   }
 
   //GETS TOP THREE
@@ -174,8 +175,4 @@ anychart.onDocumentReady(function () {
     leaderboard[leaderboard.length - 2] + " Names Indexed";
   thirdPlaceScore.innerHTML =
     leaderboard[leaderboard.length - 3] + " Names Indexed";
-
-  for (let x = 0; x < leaderboard.length; x++) {
-    console.log(leaderboard[x]);
-  }
 });
