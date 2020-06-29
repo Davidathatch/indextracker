@@ -4,12 +4,25 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>JavaScript Pie Chart</title>
+
+    <!-- ANYCHART -->
+
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
     <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
 
+    <!-- GOOGLE FONTS -->
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+
+    <!-- STYLESHEET -->
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- FONT AWESOME -->
+
+    <script src="https://kit.fontawesome.com/8a1bd87446.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -46,24 +59,48 @@
 
             <div class="scores scores1">
                 <h3 class="score score1">50</h3>
-                <h3 class="score score2">50</h3>
+                <h3 class="score score2">32</h3>
                 <h3 class="score score3">20</h3>
-                <h3 class="score score4">30</h3>
-                <h3 class="score score5">60</h3>
-                <h3 class="score score6">30</h3>
+                <h3 class="score score4">31</h3>
+                <h3 class="score score5">10</h3>
+                <h3 class="score score6">32</h3>
             </div>
             <div class="scores scores2">
-                <h3 class="score score7">50</h3>
-                <h3 class="score score8">20</h3>
-                <h3 class="score score9">50</h3>
+                <h3 class="score score7">15</h3>
+                <h3 class="score score8">60</h3>
+                <h3 class="score score9">70</h3>
                 <h3 class="score score10">10</h3>
-                <h3 class="score score11">50</h3>
+                <h3 class="score score11">21</h3>
             </div>
 
         </div>
 
         <div id="container"></div>
     </div>
+
+    <div class="leaderboard">
+        <h1 class="leaderboard-title">Top 3 Indexers</h1>
+
+        <div class="leaderboard-slots">
+
+            <div class="place-slot second-place">
+                <i class="fas fa-trophy"></i>
+                <h2>Second Place</h2>
+                <h4>Score</h4>
+            </div>
+            <div class="place-slot first-place">
+                <i class="fas fa-trophy"></i>
+                <h2>First Place</h2>
+                <h4>Score</h4>
+            </div>
+            <div class="place-slot third-place">
+                <i class="fas fa-trophy"></i>
+                <h2>Third Place</h2>
+                <h4>Score</h4>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js">
     </script>
 </body>
