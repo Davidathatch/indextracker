@@ -1,6 +1,8 @@
 anychart.onDocumentReady(function () {
   // set the data
 
+  //PARTICIPAN'S NAMES
+
   let name1 = document.querySelectorAll(".name")[0].innerHTML;
   let name2 = document.querySelectorAll(".name")[1].innerHTML;
   let name3 = document.querySelectorAll(".name")[2].innerHTML;
@@ -26,6 +28,8 @@ anychart.onDocumentReady(function () {
     name10,
     name11,
   ];
+
+  //PARTICIPAN'S SCORES, IN SAME ORDER AS NAMES
 
   let score1 = document.querySelectorAll(".score")[0].innerHTML;
   let score2 = document.querySelectorAll(".score")[1].innerHTML;
@@ -53,6 +57,8 @@ anychart.onDocumentReady(function () {
     score11,
   ];
 
+  //LEADERBOARD PLACE SECTIONS (TROPHIES)
+
   let firstPlaceSpot = document.querySelector(".first-place h2");
   let secondPlaceSpot = document.querySelector(".second-place h2");
   let thirdPlaceSpot = document.querySelector(".third-place h2");
@@ -60,6 +66,8 @@ anychart.onDocumentReady(function () {
   let firstPlaceScore = document.querySelector(".first-place h4");
   let secondPlaceScore = document.querySelector(".second-place h4");
   let thirdPlaceScore = document.querySelector(".third-place h4");
+
+  //DATA FOR PIE GRAPH
 
   var data = [
     { x: name1, value: score1 },
@@ -97,13 +105,19 @@ anychart.onDocumentReady(function () {
 
   //GETS FIRST PLACE
 
+  //ARRAY OF PERSON(S) IN FIRST PLACE
+
   let winner = [0];
+
+  //ADDS THE INDEX OF HIGHEST SCORE(S) TO WINNER ARRAY, INDEX IS SAME ACROSS FROM PARTICIPANTS AND SCORES SO THEY WILL MATCH UP
 
   for (let i = 1; i <= 11; i++) {
     if (scores[i] > scores[winner[0]]) {
       winner[0] = i;
     }
   }
+
+  //CHECKS TO SEE IF ANY SCORES ARE THE SAME AS THE HIGHEST SCORE, ADDS TO WINNER ARRAY IF TRUE. USED FOR TIES
 
   for (let i = 0; i <= 11; i++) {
     if (i !== winner[0]) {
@@ -113,24 +127,34 @@ anychart.onDocumentReady(function () {
     }
   }
 
+  //TURNS THE WINNER AND THEIR SCORE GOLD TO SIGNIFY THAT THEY ARE WINNING
+
   for (let x = 0; x < winner.length; x++) {
     document.querySelectorAll(".name")[winner[x]].style.color = "goldenrod";
     document.querySelectorAll(".score")[winner[x]].style.color = "goldenrod";
   }
 
+  //BANNER AT TOP OF PAGE LISTING THE NAME(S) OF WINNER(S)
+
   let winnerbanner = document.querySelector(".winner-banner");
+
+  //SETUP FOR THE BANNER IF ONE PERSON IS WINNING, ONLY SHOWS ONE NAME
 
   if (winner.length === 1) {
     winnerbanner.innerHTML =
       document.querySelectorAll(".name")[winner[0]].innerHTML +
       " Has Indexed The Most Names";
-  } else if (winner.length === 2) {
+  }
+  //SETUP FOR THE BANNER IF TWO PEOPLE ARE WINNING, PUT'S A & BETWEEN THEIR NAMES
+  else if (winner.length === 2) {
     winnerbanner.innerHTML =
       document.querySelectorAll(".name")[winner[0]].innerHTML +
       " and " +
       document.querySelectorAll(".name")[winner[1]].innerHTML +
       " have both indexed the most names";
-  } else {
+  }
+  //SETUP FOR THE BANNER IF MORE THAN TWO PEOPLE ARE WINNING, PUT'S NUMBER OF PEOPLE IN FIRST PLACE INSTEAD OF NAMES
+  else {
     winnerbanner.innerHTML =
       winner.length + " People Have Indexed The Most Names";
     winner.style.fontSize = ".75rem";
@@ -152,6 +176,8 @@ anychart.onDocumentReady(function () {
     score11,
   ];
 
+  //REORDERS PARTICIPANT'S AND THEIR SCORES TO BE FROM HIGHEST TO LOWEST, THEN GET'S THE TOP THREE AND ASSIGNS THEM TO THE LEADERBOARD SECTION
+
   for (let i = 0; i < leaderboard.length; i++) {
     for (let x = 0; x < leaderboard.length; x++) {
       let current = leaderboard[i];
@@ -165,6 +191,8 @@ anychart.onDocumentReady(function () {
     }
   }
 
+  //ASSIGNS FIRST, SECOND, AND THIRD PLACE TO THEIR RESPECTIVE THROPHIES AT BOTTOM OF PAGE
+
   firstPlaceSpot.innerHTML = participants[participants.length - 1];
   secondPlaceSpot.innerHTML = participants[participants.length - 2];
   thirdPlaceSpot.innerHTML = participants[participants.length - 3];
@@ -175,4 +203,16 @@ anychart.onDocumentReady(function () {
     leaderboard[leaderboard.length - 2] + " Names Indexed";
   thirdPlaceScore.innerHTML =
     leaderboard[leaderboard.length - 3] + " Names Indexed";
+
+  var total = 0;
+
+  for (let x = 0; x < scores.length; x++) {
+    console.log(scores[x]);
+    total = total + Number(scores[x]);
+  }
+
+  console.log("The total is " + total);
+
+  document.querySelector(".total-index-number").innerHTML =
+    total + " Names Indexed";
 });
