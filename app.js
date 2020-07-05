@@ -129,9 +129,11 @@ anychart.onDocumentReady(function () {
 
   //TURNS THE WINNER AND THEIR SCORE GOLD TO SIGNIFY THAT THEY ARE WINNING
 
-  for (let x = 0; x < winner.length; x++) {
-    document.querySelectorAll(".name")[winner[x]].style.color = "goldenrod";
-    document.querySelectorAll(".score")[winner[x]].style.color = "goldenrod";
+  if (winner[0] !== 0) {
+    for (let x = 0; x < winner.length; x++) {
+      document.querySelectorAll(".name")[winner[x]].style.color = "goldenrod";
+      document.querySelectorAll(".score")[winner[x]].style.color = "goldenrod";
+    }
   }
 
   //BANNER AT TOP OF PAGE LISTING THE NAME(S) OF WINNER(S)
@@ -140,24 +142,28 @@ anychart.onDocumentReady(function () {
 
   //SETUP FOR THE BANNER IF ONE PERSON IS WINNING, ONLY SHOWS ONE NAME
 
-  if (winner.length === 1) {
-    winnerbanner.innerHTML =
-      document.querySelectorAll(".name")[winner[0]].innerHTML +
-      " Has Indexed The Most Names";
-  }
-  //SETUP FOR THE BANNER IF TWO PEOPLE ARE WINNING, PUT'S A & BETWEEN THEIR NAMES
-  else if (winner.length === 2) {
-    winnerbanner.innerHTML =
-      document.querySelectorAll(".name")[winner[0]].innerHTML +
-      " and " +
-      document.querySelectorAll(".name")[winner[1]].innerHTML +
-      " have both indexed the most names";
-  }
-  //SETUP FOR THE BANNER IF MORE THAN TWO PEOPLE ARE WINNING, PUT'S NUMBER OF PEOPLE IN FIRST PLACE INSTEAD OF NAMES
-  else {
-    winnerbanner.innerHTML =
-      winner.length + " People Have Indexed The Most Names";
-    winner.style.fontSize = ".75rem";
+  if (winner[0] !== 0) {
+    if (winner.length === 1) {
+      winnerbanner.innerHTML =
+        document.querySelectorAll(".name")[winner[0]].innerHTML +
+        " Has Indexed The Most Names";
+    }
+    //SETUP FOR THE BANNER IF TWO PEOPLE ARE WINNING, PUT'S A & BETWEEN THEIR NAMES
+    else if (winner.length === 2) {
+      winnerbanner.innerHTML =
+        document.querySelectorAll(".name")[winner[0]].innerHTML +
+        " and " +
+        document.querySelectorAll(".name")[winner[1]].innerHTML +
+        " have both indexed the most names";
+    }
+    //SETUP FOR THE BANNER IF MORE THAN TWO PEOPLE ARE WINNING, PUT'S NUMBER OF PEOPLE IN FIRST PLACE INSTEAD OF NAMES
+    else {
+      winnerbanner.innerHTML =
+        winner.length + " People Have Indexed The Most Names";
+      winner.style.fontSize = ".75rem";
+    }
+  } else {
+    winnerbanner.innerHTML = "Nobody has indexed any names";
   }
 
   //GETS TOP THREE
@@ -193,16 +199,18 @@ anychart.onDocumentReady(function () {
 
   //ASSIGNS FIRST, SECOND, AND THIRD PLACE TO THEIR RESPECTIVE THROPHIES AT BOTTOM OF PAGE
 
-  firstPlaceSpot.innerHTML = participants[participants.length - 1];
-  secondPlaceSpot.innerHTML = participants[participants.length - 2];
-  thirdPlaceSpot.innerHTML = participants[participants.length - 3];
+  if (winner[0] !== 0) {
+    firstPlaceSpot.innerHTML = participants[participants.length - 1];
+    secondPlaceSpot.innerHTML = participants[participants.length - 2];
+    thirdPlaceSpot.innerHTML = participants[participants.length - 3];
 
-  firstPlaceScore.innerHTML =
-    leaderboard[leaderboard.length - 1] + " Names Indexed";
-  secondPlaceScore.innerHTML =
-    leaderboard[leaderboard.length - 2] + " Names Indexed";
-  thirdPlaceScore.innerHTML =
-    leaderboard[leaderboard.length - 3] + " Names Indexed";
+    firstPlaceScore.innerHTML =
+      leaderboard[leaderboard.length - 1] + " Names Indexed";
+    secondPlaceScore.innerHTML =
+      leaderboard[leaderboard.length - 2] + " Names Indexed";
+    thirdPlaceScore.innerHTML =
+      leaderboard[leaderboard.length - 3] + " Names Indexed";
+  }
 
   var total = 0;
 

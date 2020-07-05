@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Indexing Tracker</title>
 
     <!-- ANYCHART -->
@@ -12,107 +11,113 @@
 
     <!-- GOOGLE FONTS -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- STYLESHEET -->
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 
     <!-- FONT AWESOME -->
 
-    <script src="https://kit.fontawesome.com/8a1bd87446.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8a1bd87446.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- FAVICON -->
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
 
-</head>
-
-<body>
-
-
+  <body>
     <div class="header">
-        <h1 class="page-title">Shepard Park Indexing Tracker</h1>
+      <h1 class="page-title">Shepard Park Indexing Tracker</h1>
     </div>
 
     <div class="winner-banner">
-        <h2>Winner</h2>
+      <h2>Winner</h2>
     </div>
 
-
     <div class="index-total">
-        <h2 class="total-index-number">Index Total</h2>
+      <h2 class="total-index-number">Index Total</h2>
     </div>
 
     <div class="info">
+      <div class="stats">
+        <div class="names">
+          <h2 style="margin: 25px 0;">Youth</h2>
+          <h3 class="name name1">Eli Ashton</h3>
+          <h3 class="name name2">Megan Bacoch</h3>
+          <h3 class="name name3">Ethan Moore</h3>
+          <h3 class="name name4">Anne Jenks</h3>
+          <h3 class="name name5">Cassidy Conover</h3>
+          <h3 class="name name6">David Thatcher</h3>
 
-        <div class="stats">
-
-            <div class="names">
-                <h2 style="margin: 25px 0;">Youth</h2>
-                <h3 class="name name1">Eli Ashton</h3>
-                <h3 class="name name2">Megan Bacoch</h3>
-                <h3 class="name name3">Ethan Moore</h3>
-                <h3 class="name name4">Anne Jenks</h3>
-                <h3 class="name name5">Cassidy Conover</h3>
-                <h3 class="name name6">David Thatcher</h3>
-
-                <h2 style="margin: 25px 0;">Adults</h2>
-                <h3 class="name name7">Merilee Anderson</h3>
-                <h3 class="name name8">Debbie DeJong</h3>
-                <h3 class="name name9">Sheryl Nabrotsky</h3>
-                <h3 class="name name10">Richard Stoll</h3>
-                <h3 class="name name11">Lorraine Thatcher</h3>
-            </div>
-
-            <div class="scores scores1">
-                <h3 class="score score1">50</h3>
-                <h3 class="score score2">32</h3>
-                <h3 class="score score3">20</h3>
-                <h3 class="score score4">31</h3>
-                <h3 class="score score5">10</h3>
-                <h3 class="score score6">32</h3>
-            </div>
-            <div class="scores scores2">
-                <h3 class="score score7">15</h3>
-                <h3 class="score score8">60</h3>
-                <h3 class="score score9">70</h3>
-                <h3 class="score score10">10</h3>
-                <h3 class="score score11">21</h3>
-            </div>
-
+          <h2 style="margin: 25px 0;">Adults</h2>
+          <h3 class="name name7">Merilee Anderson</h3>
+          <h3 class="name name8">Debbie DeJong</h3>
+          <h3 class="name name9">Sheryl Nabrotsky</h3>
+          <h3 class="name name10">Richard Stoll</h3>
+          <h3 class="name name11">Lorraine Thatcher</h3>
         </div>
 
-        <div id="container"></div>
+        <div class="scores scores1">
+          <!-- ELI ASHTON'S SCORE -->
+          <h3 class="score score1">0</h3>
+          <!-- MEGAN BACOCH'S SCORE -->
+          <h3 class="score score2">0</h3>
+          <!-- ETHAN MOORE'S SCORE -->
+          <h3 class="score score3">0</h3>
+          <!-- ANNE JENK'S SCORE -->
+          <h3 class="score score4">0</h3>
+          <!-- CASSIDY CONOVER'S SCORE -->
+          <h3 class="score score5">0</h3>
+          <!-- DAVID THATCHER'S SCORE -->
+          <h3 class="score score6">0</h3>
+        </div>
+        <div class="scores scores2">
+          <!-- MERILEE ANDERSON'S SCORE -->
+          <h3 class="score score7">0</h3>
+          <!-- DEBBIE DEJONG'S SCORE -->
+          <h3 class="score score8">0</h3>
+          <!-- SHERYL NABROTSKY'S SCORE -->
+          <h3 class="score score9">0</h3>
+          <!-- RICHARD STOLL'S SCORE -->
+          <h3 class="score score10">0</h3>
+          <!-- LORRAINE THATCHER'S SCORE -->
+          <h3 class="score score11">0</h3>
+        </div>
+      </div>
+
+      <div id="container"></div>
     </div>
 
     <div class="leaderboard">
-        <h1 class="leaderboard-title">Top 3 Indexers</h1>
+      <h1 class="leaderboard-title">Top 3 Indexers</h1>
 
-        <div class="leaderboard-slots">
-
-            <div class="place-slot second-place">
-                <i class="fas fa-trophy"></i>
-                <h2>Second Place</h2>
-                <h4>Score</h4>
-            </div>
-            <div class="place-slot first-place">
-                <i class="fas fa-trophy"></i>
-                <h2>First Place</h2>
-                <h4>Score</h4>
-            </div>
-            <div class="place-slot third-place">
-                <i class="fas fa-trophy"></i>
-                <h2>Third Place</h2>
-                <h4>Score</h4>
-            </div>
+      <div class="leaderboard-slots">
+        <div class="place-slot second-place">
+          <i class="fas fa-trophy"></i>
+          <h2>Second Place</h2>
+          <h4>Score</h4>
         </div>
+        <div class="place-slot first-place">
+          <i class="fas fa-trophy"></i>
+          <h2>First Place</h2>
+          <h4>Score</h4>
+        </div>
+        <div class="place-slot third-place">
+          <i class="fas fa-trophy"></i>
+          <h2>Third Place</h2>
+          <h4>Score</h4>
+        </div>
+      </div>
     </div>
 
-    <script src="app.js">
-    </script>
-</body>
-
+    <script src="app.js"></script>
+  </body>
 </html>
